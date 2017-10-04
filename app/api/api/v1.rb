@@ -10,11 +10,18 @@ module Api
         Account.all
       end
 
-      get '/:id' do
-        Account.find_by(id: params[:id])
-      end
+      # desc 'create new account'
+      # post do
+      #   account = Account.new(params)
+      #   account.save!
+      #   account
+      # end
 
       route_param :id do
+        get do
+          Account.find_by(id: params[:id])
+        end
+
         desc 'get one account'
         get do
           Account.find_by(id: params[:id])
