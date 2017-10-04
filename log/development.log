@@ -12,6 +12,7 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 232ms (Views: 13.4ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2017-10-04 19:19:47 -0300
 Processing by Rails::WelcomeController#index as HTML
   Rendering /Users/dochoaj/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
@@ -127,6 +128,60 @@ Completed 200 OK in 29ms (Views: 27.0ms)
 Started GET "/caquita" for ::1 at 2017-10-04 19:37:16 -0300
   
 ActionController::RoutingError (No route matches [GET] "/caquita"):
+=======
+Started GET "/" for 127.0.0.1 at 2017-10-04 19:38:40 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 238ms (Views: 9.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-04 19:38:43 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 10ms (Views: 6.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK(2142315722327472720, 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateAccounts (20171004224035)
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE `accounts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `number` varchar(255), `type` varchar(255), `amount` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171004224035')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-10-04 22:49:57', '2017-10-04 22:49:57')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(2142315722327472720)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(2142315722327472720, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateCurrencies (20171004225152)
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `currencies` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `code` varchar(255), `exchange_rate` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171004225152')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMovements (20171004225504)
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE `movements` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `account_id` bigint, `currency_id` bigint, `amount` float, `exchange_rate` float, `expense` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_movements_on_account_id`  (`account_id`),  INDEX `index_movements_on_currency_id`  (`currency_id`)) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171004225504')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(2142315722327472720)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:24:31 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/accounts"):
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -149,13 +204,68 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
-webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
-rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-10-04 20:25:28 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-04 20:26:03 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/abraham/.rbenv/versions/2.2.5/lib/ruby/gems/2.2.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 17ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:26:06 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/accounts"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
+webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
+rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 19:37:19 -0300
 Processing by HomeController#index as HTML
@@ -167,6 +277,13 @@ Completed 200 OK in 21ms (Views: 18.6ms)
 Started GET "/caquita" for ::1 at 2017-10-04 19:37:20 -0300
   
 ActionController::RoutingError (No route matches [GET] "/caquita"):
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api" for 127.0.0.1 at 2017-10-04 20:26:40 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -189,13 +306,17 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
 webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
 rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 19:37:36 -0300
 Processing by HomeController#index as HTML
@@ -207,6 +328,15 @@ Completed 200 OK in 18ms (Views: 15.7ms)
 Started GET "/api/v1/" for ::1 at 2017-10-04 19:37:37 -0300
   
 ActionController::RoutingError (No route matches [GET] "/api/v1"):
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/acou" for 127.0.0.1 at 2017-10-04 20:28:49 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/acou"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -229,13 +359,17 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
 webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
 rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 19:37:38 -0300
 Processing by HomeController#index as HTML
@@ -247,6 +381,13 @@ Completed 200 OK in 21ms (Views: 19.4ms)
 Started GET "/api/v1/" for ::1 at 2017-10-04 19:37:39 -0300
   
 ActionController::RoutingError (No route matches [GET] "/api/v1"):
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/accounts" for 127.0.0.1 at 2017-10-04 20:28:53 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/accounts"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -269,13 +410,17 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
 webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
 rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 19:44:29 -0300
 Processing by HomeController#index as HTML
@@ -287,6 +432,244 @@ Completed 200 OK in 30ms (Views: 27.9ms)
 Started GET "/api/v1/account/1/movements" for ::1 at 2017-10-04 19:44:30 -0300
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/account/1/movements"):
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:28:59 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:29:34 -0300
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: '1'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Account.inheritance_column to use another column for that information.):
+  
+activerecord (5.1.4) lib/active_record/inheritance.rb:196:in `rescue in find_sti_class'
+activerecord (5.1.4) lib/active_record/inheritance.rb:189:in `find_sti_class'
+activerecord (5.1.4) lib/active_record/inheritance.rb:177:in `discriminate_class_for_record'
+activerecord (5.1.4) lib/active_record/persistence.rb:67:in `instantiate'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `block in each'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `each'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `each'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `map'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/querying.rb:49:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/relation.rb:667:in `exec_queries'
+activerecord (5.1.4) lib/active_record/relation.rb:546:in `load'
+activerecord (5.1.4) lib/active_record/relation.rb:255:in `records'
+activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `as_json'
+activesupport (5.1.4) lib/active_support/json/encoding.rb:33:in `encode'
+activesupport (5.1.4) lib/active_support/json/encoding.rb:20:in `encode'
+activesupport (5.1.4) lib/active_support/core_ext/object/json.rb:39:in `to_json'
+grape (1.0.1) lib/grape/formatter/json.rb:6:in `call'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `block in build_formatted_response'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `collect'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `build_formatted_response'
+grape (1.0.1) lib/grape/middleware/formatter.rb:28:in `after'
+grape (1.0.1) lib/grape/middleware/base.rb:34:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+grape (1.0.1) lib/grape/middleware/base.rb:31:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+grape (1.0.1) lib/grape/middleware/error.rb:37:in `block in call!'
+grape (1.0.1) lib/grape/middleware/error.rb:36:in `catch'
+grape (1.0.1) lib/grape/middleware/error.rb:36:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+grape (1.0.1) lib/grape/endpoint.rb:227:in `call!'
+grape (1.0.1) lib/grape/endpoint.rb:221:in `call'
+grape (1.0.1) lib/grape/router/route.rb:72:in `exec'
+grape (1.0.1) lib/grape/router.rb:119:in `process_route'
+grape (1.0.1) lib/grape/router.rb:74:in `block in identity'
+grape (1.0.1) lib/grape/router.rb:93:in `transaction'
+grape (1.0.1) lib/grape/router.rb:72:in `identity'
+grape (1.0.1) lib/grape/router.rb:57:in `block in call'
+grape (1.0.1) lib/grape/router.rb:135:in `with_optimization'
+grape (1.0.1) lib/grape/router.rb:56:in `call'
+grape (1.0.1) lib/grape/api.rb:119:in `call'
+grape (1.0.1) lib/grape/api.rb:45:in `call!'
+grape (1.0.1) lib/grape/api.rb:40:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:29:57 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: '1'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Account.inheritance_column to use another column for that information.):
+  
+activerecord (5.1.4) lib/active_record/inheritance.rb:196:in `rescue in find_sti_class'
+activerecord (5.1.4) lib/active_record/inheritance.rb:189:in `find_sti_class'
+activerecord (5.1.4) lib/active_record/inheritance.rb:177:in `discriminate_class_for_record'
+activerecord (5.1.4) lib/active_record/persistence.rb:67:in `instantiate'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `block (2 levels) in find_by_sql'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `block in each'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `each'
+activerecord (5.1.4) lib/active_record/result.rb:55:in `each'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `map'
+activerecord (5.1.4) lib/active_record/querying.rb:50:in `block in find_by_sql'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activerecord (5.1.4) lib/active_record/querying.rb:49:in `find_by_sql'
+activerecord (5.1.4) lib/active_record/relation.rb:667:in `exec_queries'
+activerecord (5.1.4) lib/active_record/relation.rb:546:in `load'
+activerecord (5.1.4) lib/active_record/relation.rb:255:in `records'
+activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `as_json'
+activesupport (5.1.4) lib/active_support/json/encoding.rb:33:in `encode'
+activesupport (5.1.4) lib/active_support/json/encoding.rb:20:in `encode'
+activesupport (5.1.4) lib/active_support/core_ext/object/json.rb:39:in `to_json'
+grape (1.0.1) lib/grape/formatter/json.rb:6:in `call'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `block in build_formatted_response'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `collect'
+grape (1.0.1) lib/grape/middleware/formatter.rb:44:in `build_formatted_response'
+grape (1.0.1) lib/grape/middleware/formatter.rb:28:in `after'
+grape (1.0.1) lib/grape/middleware/base.rb:34:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+grape (1.0.1) lib/grape/middleware/base.rb:31:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+grape (1.0.1) lib/grape/middleware/error.rb:37:in `block in call!'
+grape (1.0.1) lib/grape/middleware/error.rb:36:in `catch'
+grape (1.0.1) lib/grape/middleware/error.rb:36:in `call!'
+grape (1.0.1) lib/grape/middleware/base.rb:24:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+grape (1.0.1) lib/grape/endpoint.rb:227:in `call!'
+grape (1.0.1) lib/grape/endpoint.rb:221:in `call'
+grape (1.0.1) lib/grape/router/route.rb:72:in `exec'
+grape (1.0.1) lib/grape/router.rb:119:in `process_route'
+grape (1.0.1) lib/grape/router.rb:74:in `block in identity'
+grape (1.0.1) lib/grape/router.rb:93:in `transaction'
+grape (1.0.1) lib/grape/router.rb:72:in `identity'
+grape (1.0.1) lib/grape/router.rb:57:in `block in call'
+grape (1.0.1) lib/grape/router.rb:135:in `with_optimization'
+grape (1.0.1) lib/grape/router.rb:56:in `call'
+grape (1.0.1) lib/grape/api.rb:119:in `call'
+grape (1.0.1) lib/grape/api.rb:45:in `call!'
+grape (1.0.1) lib/grape/api.rb:40:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:17:in `block in <class:Constraints>'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `call'
+actionpack (5.1.4) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(2142315722327472720, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveTypeFromAccount (20171004233138)
+  [1m[35m (44.5ms)[0m  [1m[35mALTER TABLE `accounts` DROP `type`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE `accounts` ADD `string` account_type[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(2142315722327472720)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK(2142315722327472720, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveTypeFromAccount (20171004233138)
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE `accounts` DROP `type`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(2142315722327472720)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK(2142315722327472720, 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to RemoveTypeFromAccount (20171004233138)
+  [1m[35m (43.5ms)[0m  [1m[35mALTER TABLE `accounts` ADD `account_type` varchar(255)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171004233138')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK(2142315722327472720)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:35:09 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+Started GET "/api/v1/accounts/1" for 127.0.0.1 at 2017-10-04 20:37:07 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/accounts/1"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -309,13 +692,17 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
 webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
 rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 20:00:41 -0300
 Processing by HomeController#index as HTML
@@ -327,6 +714,15 @@ Completed 200 OK in 23ms (Views: 21.2ms)
 Started GET "/api/v1/account/1/movements" for ::1 at 2017-10-04 20:00:42 -0300
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/account/1/movements"):
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/accounts/1" for 127.0.0.1 at 2017-10-04 20:37:22 -0300
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/accounts/1"):
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
   
 actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
@@ -349,13 +745,17 @@ activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.r
 actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
 actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
 rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+<<<<<<< HEAD
 webpacker (3.0.1) lib/webpacker/dev_server_proxy.rb:17:in `perform_request'
 rack-proxy (0.6.2) lib/rack/proxy.rb:57:in `call'
+=======
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
 railties (5.1.4) lib/rails/engine.rb:522:in `call'
 puma (3.10.0) lib/puma/configuration.rb:225:in `call'
 puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+<<<<<<< HEAD
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 Started GET "/" for ::1 at 2017-10-04 20:03:01 -0300
 Processing by HomeController#index as HTML
@@ -420,3 +820,28 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 17ms (Views: 15.3ms)
 
 
+=======
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/accounts/1" for 127.0.0.1 at 2017-10-04 20:38:32 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 1 LIMIT 1[0m
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:38:36 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAccount Load (1.2ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+Started GET "/api/v1/accounts/1" for 127.0.0.1 at 2017-10-04 20:38:41 -0300
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 1 LIMIT 1[0m
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2017-10-04 20:38:54 -0300
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+Started GET "/api/v1/accounts/2" for 127.0.0.1 at 2017-10-04 20:39:02 -0300
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 2 LIMIT 1[0m
+Started GET "/api/v1/accounts/2" for 127.0.0.1 at 2017-10-04 20:39:57 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 2 LIMIT 1[0m
+Started GET "/api/v1/accounts/2" for 127.0.0.1 at 2017-10-04 20:40:12 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 2 LIMIT 1[0m
+>>>>>>> dc863c17575c1972510b45cada7a262f0a35a4a2
