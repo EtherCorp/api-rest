@@ -12,7 +12,7 @@ module Api
 
       # desc 'create new account'
       # post do
-      #   account = Account.new(params)
+      #   account = Account.new_with_params(params)
       #   account.save!
       #   account
       # end
