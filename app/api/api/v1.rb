@@ -10,7 +10,10 @@ module Api
       desc 'Obtener todas las cuentas'
       # El metodo get se traduce como el verbo HTTP GET
       get do
-        Account.all
+        # Ver archivo app/api/entities/account_entity.rb
+        # para entender que se esta haciendo aqui
+        # para presentar los datos
+        present Account.all, with: Entities::AccountEntity
       end
 
       desc 'Crear nueva cuenta'
