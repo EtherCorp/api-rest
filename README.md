@@ -1,24 +1,57 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### API REST
 
-Things you may want to cover:
+Para levantar el API rest:
 
-* Ruby version
+1. Instalar ruby 2.2.5
+2. ejecutar `bundle install`
+3. ejecutar `bundle exec rake db:create`
+4. ejecutar `bundle exec rake db:migrate`
+4. ejecutar `bundle exec rails s`
 
-* System dependencies
+#### Recurso `accounts`
 
-* Configuration
+1. Obtener Cuentas - `GET v1/accounts`
 
-* Database creation
+```
+curl -X GET \
+  http://localhost:3000/api/v1/accounts
+```
 
-* Database initialization
+2. Crear una nueva cuenta - `POST v1/accounts`
 
-* How to run the test suite
+```
+curl -X POST \
+  http://localhost:3000/api/v1/accounts \
+  -H 'content-type: application/json' \
+  -d '{
+    "name": "Cuenta banco",
+    "number": "12234",
+    "account_type": "cta cte",
+    "amount": 100000
+  }'
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Modificar una nueva cuenta - `PUT v1/accounts/:id`
 
-* Deployment instructions
+```
+curl -X PUT \
+  http://localhost:3000/api/v1/accounts/1 \
+  -H 'content-type: application/json' \
+  -d '{
+    "name": "Cuenta banco",
+    "number": "1224",
+    "account_type": "cta cte",
+    "amount": 1000
+  }'
+```
 
-* ...
+4. Eliminar una nueva cuenta - `DELETE v1/accounts/:id`
+
+```
+curl -X DELETE \
+  http://localhost:3000/api/v1/accounts/1 \
+  -H 'content-type: application/json'
+```
+
