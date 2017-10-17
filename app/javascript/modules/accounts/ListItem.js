@@ -5,6 +5,9 @@ export default class ListItem extends Component {
     return (
       <div className='account-item'>
         <span>{this.props.data.name}</span>
+        <button onClick={this.props.onClick}>
+          Click me!
+        </button>
       </div>
     )
   }

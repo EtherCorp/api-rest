@@ -11,15 +11,15 @@ export default class List extends Component {
 
   componentWillMount() {
     if (this.props.account_id) {
-      this.setState({ loading: true })
+      this.setState({ loading: true }) // Render!
 
-      CustomAxios.get("account/${this.props.account_id}/movements")
+      CustomAxios.get(`account/${this.props.account_id}/movements`)
         .then(response => {
           console.log(response)
           this.setState({
             loading: false,
             movements: this.response.data
-          })
+          }) // Render!
         })
     }
   }
@@ -27,8 +27,9 @@ export default class List extends Component {
   renderTable() {
     return (
       <div className='movements-list-container'>
-        <ListItem />
-        <ListItem />
+        {this.state.movements.map( movement => {
+          return <ListItem data={movement} />
+        })}
       </div>
     )
   }
@@ -50,11 +51,11 @@ export default class List extends Component {
   }
 
   render() {
-    if (this.props.loading) {
+    if (this.state.loading) {
       return this.renderLoading()
     }
 
-    if (!this.props.movements) {
+    if (!this.state.movements) {
       return this.renderEmpty()
     }
 

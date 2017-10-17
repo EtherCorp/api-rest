@@ -15,14 +15,14 @@ export default class List extends Component {
       .then(response => {
         this.setState({
           loading: false,
-          accounts: this.response.data
+          accounts: response.data
         })
       })
   }
 
   onClick = (event) => {
     event.preventDefault()
-    this.props.onAccountSelection(this.props.data.id)
+    alert('Hola')
   }
 
   renderTable() {
@@ -37,6 +37,7 @@ export default class List extends Component {
     return this.state.accounts.map(account => {
       return (
         <ListItem
+          key={account.id}
           data={account}
           onClick={this.onClick}
         />
@@ -55,11 +56,11 @@ export default class List extends Component {
   }
 
   render() {
-    if (this.props.loading) {
+    if (this.state.loading) {
       return this.renderLoading()
     }
 
-    if (!this.props.accounts) {
+    if (!this.state.accounts) {
       return this.renderEmpty()
     }
 
