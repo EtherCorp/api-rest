@@ -2,5 +2,108 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-color: #F3A3F2;
+  background-color: rgb(249, 246, 249);
+  margin: 0;
+  width: 100%;
+}
+
+.layout {
+  .menu {
+    background-color: #EC0000;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .title {
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 2;
+
+      .menu-item {
+        height: 38px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding: 1px;
+  
+        &:hover {
+          background-color: #B30000;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+.accounts-list-container {
+  width: 100%;
+
+  .account-item {
+    &:hover {
+      cursor: pointer;
+      background-color: #DFDFDF;
+    }
+
+    padding: 15px;
+    width: 100%;
+    border: #DFDFDF 0.4px solid;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .account-main-data {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 10px;
+
+      .account-name {
+        font-weight: 600;
+        font-size: 24px;
+      }
+
+      .account-amount {
+        font-weight: 600;
+        font-size: 24px;
+
+        &.positive {
+          color: green;
+        }
+
+        &.negative {
+          color: red;
+        }
+      }
+    }
+
+    .account-secondary-data {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 20px;
+    }
+  }
 }

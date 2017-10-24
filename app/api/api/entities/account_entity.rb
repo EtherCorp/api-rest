@@ -8,6 +8,7 @@ module Api
     class AccountEntity < Grape::Entity
       expose :id
       expose :name
+      expose :amount
       expose :number
       expose :account_type
     end
